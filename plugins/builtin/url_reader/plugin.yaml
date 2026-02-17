@@ -1,0 +1,5 @@
+name: url_reader
+version: "1.0.0"
+description: "Fetch and extract text from web URLs"
+author: "builtin"
+enabled: true

@@ -1,0 +1,9 @@
+name: browser
+version: 0.1.0
+description: Headless browser automation using Playwright.
+author: Elyssia
+dependencies:
+  - playwright
+config:
+  headless: true
+  user_agent: "Mozilla/5.0 (ElyssiaAgent)"

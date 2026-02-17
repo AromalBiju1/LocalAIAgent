@@ -1,0 +1,5 @@
+name: python_exec
+version: "1.0.0"
+description: "Python code execution in sandboxed environment"
+author: "builtin"
+enabled: true

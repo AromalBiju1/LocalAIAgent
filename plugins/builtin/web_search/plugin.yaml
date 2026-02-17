@@ -1,0 +1,5 @@
+name: web_search
+version: "1.0.0"
+description: "Web search via DuckDuckGo"
+author: "builtin"
+enabled: true

@@ -1,0 +1,126 @@
+model:
+  name: "qwen3:4b"
+  backend: "ollama"  # Options: ollama, llamacpp
+  base_url: "http://localhost:11434"
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 2048
+  timeout: 300
+  
+  # Example: Use OpenAI-compatible local server (e.g. vLLM, LM Studio)
+  # backend: "openai"
+  # name: "local-model"
+  # openai:
+  #   base_url: "http://localhost:8000/v1"
+  #   api_key: "lm-studio"  # or "sk-..."
+
+embeddings:
+  model_name: "all-MiniLM-L6-v2"
+  device: "cpu"  # Embeddings run on CPU to save GPU memory
+  max_length: 512
+
+rag:
+  vector_store: "faiss"  # Options: faiss, qdrant, chroma
+  chunk_size: 512
+  chunk_overlap: 50
+  top_k: 5
+  similarity_threshold: 0.7
+  retrieval_method: "similarity"  # Options: similarity, mmr
+  
+  # Qdrant specific (if using)
+  qdrant:
+    host: "localhost"
+    port: 6333
+    collection_name: "documents"
+
+agent:
+  max_iterations: 10
+  max_tool_calls: 5
+  enable_memory: true
+  memory_window: 10  # Number of previous messages to keep
+  timeout: 300
+  thinking_budget: 3  # Max reasoning steps
+  
+  # Agent types
+  agents:
+    - name: "research"
+      description: "Specialized in research and information gathering"
+      tools: ["web_search", "rag_query", "summarize"]
+    
+    - name: "coding"
+      description: "Specialized in code generation and debugging"
+      tools: ["python_execute", "code_search", "lint"]
+    
+    - name: "analysis"
+      description: "Specialized in data analysis and visualization"
+      tools: ["python_execute", "chart_create", "sql_query"]
+
+tools:
+  enabled:
+    - "calculator"
+    - "python_execute"
+    - "web_search"
+    - "file_read"
+    - "file_write"
+    - "rag_query"
+  
+  # Tool-specific configs
+  python_execute:
+    timeout: 30
+    max_memory_mb: 512
+    allow_imports: ["math", "json", "datetime", "re"]
+  
+  web_search:
+    engine: "duckduckgo"  # Free, no API key needed
+    max_results: 5
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 1
+  cors_origins: ["*"]
+  rate_limit: 100  # requests per minute
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "detailed"  # simple, detailed, json
+  file: "logs/agent.log"
+  rotation: "10 MB"
+  retention: "7 days"
+
+storage:
+  base_path: "data"
+  documents_path: "data/documents"
+  vectorstore_path: "data/vectorstore"
+  conversations_path: "data/conversations"
+
+monitoring:
+  enabled: false
+  prometheus_port: 9090
+  
+performance:
+  gpu_memory_fraction: 0.95
+  batch_size: 1
+  use_flash_attention: true
+  kv_cache_quantization: true
+
+# ── Multi-Channel Communication ──────────────────────────
+channels:
+  telegram:
+    enabled: false
+    bot_token: ""  # Or use env: TELEGRAM_BOT_TOKEN
+    allowed_users: []  # List of user IDs (integers)
+
+  discord:
+    enabled: false
+    bot_token: ""  # Or use env: DISCORD_BOT_TOKEN
+    command_prefix: "!"
+    allowed_channels: []  # List of channel IDs (integers)
+    allowed_users: []  # List of user IDs (integers)
+
+# ── Plugins ──────────────────────────────────────────────
+plugins:
+  browser:
+    headless: true  # Set to false to see the browser UI
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"

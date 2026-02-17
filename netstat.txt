@@ -1,0 +1,28 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:11434         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:36597         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:35439         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:38127         0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:46463         0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:5355            0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:8001            0.0.0.0:*               LISTEN     
+tcp6       0      0 ::1:631                 :::*                    LISTEN     
+tcp6       0      0 :::1716                 :::*                    LISTEN     
+tcp6       0      0 :::3000                 :::*                    LISTEN     
+tcp6       0      0 :::46519                :::*                    LISTEN     
+tcp6       0      0 :::5355                 :::*                    LISTEN     
+udp        0      0 127.0.0.1:323           0.0.0.0:*                          
+udp        0      0 224.0.0.251:5353        0.0.0.0:*                          
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                          
+udp        0      0 0.0.0.0:5355            0.0.0.0:*                          
+udp        0      0 127.0.0.54:53           0.0.0.0:*                          
+udp        0      0 127.0.0.53:53           0.0.0.0:*                          
+udp6       0      0 ::1:323                 :::*                               
+udp6       0      0 :::1716                 :::*                               
+udp6       0      0 :::5353                 :::*                               
+udp6       0      0 :::5355                 :::*                               

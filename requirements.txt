@@ -1,0 +1,46 @@
+# Core LLM dependencies
+aiohttp>=3.9.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Async utilities
+asyncio-mqtt>=0.16.1
+
+# Configuration
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# Logging and monitoring
+loguru>=0.7.2
+prometheus-client>=0.19.0
+
+# API Server
+fastapi>=0.109.0
+uvicorn[standard]>=0.25.0
+websockets>=12.0
+
+# Tool calling
+duckduckgo-search>=4.1
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+
+# Channels
+python-telegram-bot>=20.0
+discord.py>=2.3.0
+
+
+# RAG & Embeddings
+sentence-transformers>=2.3.0
+faiss-cpu>=1.7.0
+pymupdf>=1.23.0
+
+# Testing (optional)
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+pytest-cov>=4.1.0
+
+# Development tools (optional)
+black>=23.12.0
+isort>=5.13.0
+mypy>=1.7.0
+pylint>=3.0.0

@@ -1,0 +1,5 @@
+name: rag_tools
+version: "1.0.0"
+description: "RAG query and ingest tools for knowledge base"
+author: "builtin"
+enabled: true

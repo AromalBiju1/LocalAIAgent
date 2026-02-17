@@ -1,0 +1,5 @@
+name: "hello_world"
+version: "0.1.0"
+description: "A simple example plugin to verify the plugin system."
+author: "Elyssia"
+enabled: true

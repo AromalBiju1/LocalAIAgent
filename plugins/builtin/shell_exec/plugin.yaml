@@ -1,0 +1,5 @@
+name: shell_exec
+version: "1.0.0"
+description: "Shell command execution with safety checks"
+author: "builtin"
+enabled: true

@@ -1,0 +1,5 @@
+name: file_tools
+version: "1.0.0"
+description: "File read/write operations with path sandboxing"
+author: "builtin"
+enabled: true

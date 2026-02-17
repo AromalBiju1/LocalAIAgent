@@ -1,0 +1,5 @@
+name: system_stats
+version: 0.1.0
+description: "Provides system statistics (CPU, memory, uptime) to the agent."
+author: "Elyssia Team"
+enabled: true

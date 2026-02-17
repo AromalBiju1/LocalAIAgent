@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* OpenClaw / Lobster Theme */
+  --bg: #09090b;
+  /* Zinc-950 (Deep Warm Black) */
+  --surface: #18181b;
+  /* Zinc-900 */
+  --card: #27272a;
+  /* Zinc-800 */
+  --border: #3f3f46;
+  /* Zinc-700 */
+
+  /* The Lobster Palette */
+  --highlight: #FF5A2D;
+  /* Lobster Orange-Red */
+  --highlight-dim: #D14A22;
+  /* Dim Lobster */
+  --highlight-glow: rgba(255, 90, 45, 0.15);
+
+  --pink-accent: #EC4899;
+  /* Pink Diamond */
+  --pink-glow: rgba(236, 72, 153, 0.3);
+
+  --secondary: #a1a1aa;
+  /* Zinc-400 */
+
+  /* Typography */
+  --text: #fafafa;
+  /* Zinc-50 */
+  --text-dim: #a1a1aa;
+  /* Zinc-400 */
+  --muted: #52525b;
+  /* Zinc-600 */
+
+  --success: #2FBF71;
+  /* OpenClaw Mint Green */
+  --error: #E23D2D;
+  /* OpenClaw Red */
+  --warning: #FFB020;
+  /* OpenClaw Amber */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-display {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Mono font for code and data - essential for OpenClaw look */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Scrollbar - Minimal Dark */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 5px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* UTILITIES */
+
+/* Lobster Glow */
+.lobster-glow {
+  box-shadow: 0 0 20px -5px var(--highlight-glow);
+}
+
+.text-lobster {
+  color: var(--highlight);
+}
+
+.border-lobster {
+  border-color: var(--highlight);
+}
+
+/* Retro-Modern Card */
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  /* Slightly rounder for the modern feel */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(255, 90, 45, 0.15);
+}
+
+/* Angled Accents */
+.skew-box {
+  transform: skewX(-10deg);
+}
+
+.skew-box-inverse {
+  transform: skewX(10deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+  /* Faster, standard loader speed */
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) skewX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) skewX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideInRight 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Modern Input Focus */
+.input-glow:focus {
+  outline: none;
+  border-color: var(--highlight);
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Markdown Overrides */
+.markdown-body {
+  font-size: 1rem;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: var(--highlight);
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid var(--border);
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  text-transform: none;
+  /* Removed uppercase for readability */
+}
+
+.markdown-body p {
+  margin-bottom: 1.2em;
+  line-height: 1.7;
+}
+
+.markdown-body pre {
+  background: #0d110d !important;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.markdown-body code {
+  color: var(--secondary);
+  background: rgba(0, 255, 65, 0.08) !important;
+  font-family: 'Fira Code', monospace;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.markdown-body a {
+  color: var(--highlight);
+  text-decoration: none;
+  border-bottom: 1px solid var(--highlight-dim);
+}
+
+.markdown-body a:hover {
+  background: var(--highlight-glow);
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid var(--highlight);
+  margin: 1.5em 0;
+  padding-left: 1em;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* Selection */
+::selection {
+  background: var(--highlight-dim);
+  color: #fff;
+}
